@@ -2,9 +2,11 @@
     session_start();
     include_once './../conexao.php';
 
+    date_default_timezone_set("America/Bahia");
+
     $publish = $_POST['publish'];
     $image = $_POST['image'];
-    $data = date("Y/m/d");
+    $data = date("Y/m/d h:i:s");
     $owner = $_SESSION['id_user'];
 
     
