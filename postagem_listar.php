@@ -13,7 +13,6 @@
         $postou = $resultado['cod_user'];
         $post = $resultado['post'];
         $img = $resultado['img'];
-
         $data = $resultado['data_post'];
 
         $sqlNome = "SELECT `name` FROM user WHERE id_user='$postou'";
@@ -28,7 +27,7 @@
                     <img src=\"$img\" style=\"width:50%\" alt=\"postagem\" class=\"w3-margin-bottom\">
                 </div>
             </div>";
-        }  
+        } 
 
         echo "
         <div class=\"w3-container w3-card w3-white w3-round w3-margin\"><br>
@@ -41,7 +40,7 @@
             <button type=\"button\" class=\"w3-button w3-theme-d1 w3-margin-bottom\"><i class=\"fa fa-thumbs-up\"></i>  Like</button> 
             <button type=\"button\" class=\"w3-button w3-theme-d2 w3-margin-bottom\"><i class=\"fa fa-comment\"></i>  Comment</button> 
         </div>";
-        $img = null;
+        unset($html);
     }
 
 
