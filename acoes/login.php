@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    include_once 'conexao.php';
+    include_once '../conexao.php';
 
     $user = addslashes($_POST['user']);
     $pass = addslashes($_POST['pass']);
@@ -24,12 +24,12 @@
         if($_SESSION['foto'] == ""){
             $_SESSION['foto'] = "img/profile.png";
         }
-        header("Location:painel.php");
+        header("Location:./../painel.php");
 
     } else {
         echo "<script>
                 alert('Usuário não encontrado');
-                document.location.href = 'index.php';
+                document.location.href = './../index.php';
             </script>";
     }
 

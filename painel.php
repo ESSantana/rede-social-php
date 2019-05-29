@@ -1,4 +1,5 @@
 <?php 
+  include_once './acoes/verifica_sessao.php';
   include_once 'topo.php'; 
 ?>
 <!-- Page Container -->
@@ -20,7 +21,7 @@
     <div class="w3-col m7">
       <?php 
         include_once 'publicar.php';
-        include_once 'postagem.php'; 
+        include_once 'postagem_listar.php'; 
       ?>
       
     <!-- End Middle Column -->
@@ -38,4 +39,6 @@
 <!-- End Page Container -->
 </div>
 <br>
-<?php include_once'rodape.php'; ?>
+<?php 
+  include_once 'rodape.php';
+?>

@@ -21,26 +21,26 @@
  			<hr>
 			<div class="row">
 				<div class="col-md-5">
- 					<form role="form" method="POST" action="register.php">
+ 					<form role="form" method="POST" action="./acoes/cadastrar_user.php">
 						<fieldset>							
 							<p class="text-uppercase pull-center">Cadastre-se</p>	
  							<div class="form-group">
-								<input type="text" name="user" id="user" class="form-control input-lg" placeholder="Usuário">
+								<input type="text" name="user" id="user" class="form-control input-lg" placeholder="Usuário" required>
 							</div>
 
 							<div class="form-group">
-								<input type="text" name="nome" id="nome" class="form-control input-lg" placeholder="Nome">
+								<input type="text" name="name" id="name" class="form-control input-lg" placeholder="Nome" required>
 							</div>
 							<div class="form-group">
-								<input type="password" name="pass" id="pass" class="form-control input-lg" placeholder="Senha">
+								<input type="password" name="pass" id="pass" class="form-control input-lg" placeholder="Senha" required> 
 							</div>
 								<div class="form-group">
-								<input type="text" name="especialidade" id="especialidade" class="form-control input-lg" placeholder="Qual sua especialidade no humor?">
+								<input type="text" name="especialidade" id="especialidade" class="form-control input-lg" placeholder="Qual sua especialidade no humor?" required>
 							</div>
-
+							<label >Data de nascimento</label>
                             <div class="form-row">
                                 <div class="form-group col-md-4">
-                                    <select class="form-control" name="dia_nasc">
+                                    <select class="form-control" name="dia_nasc" required>
                                         <?php
                                             for($x=1;$x<=31;$x++){
                                                 echo "<option value='$x'>$x</option>";
@@ -49,9 +49,8 @@
                                         ?>
                                     </select>       
                                 </div>  
-
                                 <div class="form-group col-md-4">
-                                    <select class="form-control" name="mes_nasc">
+                                    <select class="form-control" name="mes_nasc" required>
                                         <option value="Janeiro">Janeiro</option>
                                         <option value="Fevereiro">Fevereiro</option>
                                         <option value="Março">Março</option>
@@ -66,9 +65,8 @@
                                         <option value="Dezembro">Dezembro</option>
                                     </select>
                                 </div>
-
                                 <div class="form-group col-md-4">
-                                    <select class="form-control" name="ano_nasc">
+                                    <select class="form-control" name="ano_nasc" required>
                                         <?php
                                             for($x=2019;$x>=1900;$x--){
                                                 echo "<option value='$x'>$x</option>";
@@ -91,7 +89,7 @@
 				</div>
 				
 				<div class="col-md-5">
- 				 		<form role="form" method="POST" action="login.php">
+ 				 		<form role="form" method="POST" action="./acoes/login.php">
 						<fieldset>							
 							<p class="text-uppercase"> Faça login usando seu usuário </p>	
  								

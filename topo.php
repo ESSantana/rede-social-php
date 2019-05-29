@@ -1,6 +1,5 @@
 <?php 
     session_start();
-    include_once 'verifica_sessao.php';
     error_reporting(1); 
 ?>
 
@@ -32,7 +31,7 @@
                     <a href="#" class="w3-bar-item w3-button">Curtidas no seu post</a>
                     </div>
                 </div>
-                <a href="logout.php" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
+                <a href="./acoes/logout.php" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
                     <img src="img/profile.png" class="w3-circle" style="height:23px;width:23px" alt="Avatar">
                 </a>
                 <!-- Search form -->
