@@ -2,10 +2,10 @@
     session_start();
     include_once 'conexao.php';
     $cod_user = $_SESSION['id_user'];
-    $foto = $_SESSION['foto'];
+    
 
-    $sql = "SELECT * FROM publish WHERE cod_user='$cod_user' UNION SELECT * FROM publish WHERE cod_user=(SELECT cod_answer FROM 
-    friendship WHERE cod_ask='$cod_user' and status='1') UNION SELECT * FROM publish WHERE cod_user=(SELECT cod_ask FROM 
+    $sql = "SELECT * FROM publish  WHERE cod_user='$cod_user' UNION SELECT * FROM publish WHERE cod_user IN (SELECT cod_answer FROM 
+    friendship WHERE cod_ask='$cod_user' and status='1') UNION SELECT * FROM publish WHERE cod_user IN (SELECT cod_ask FROM 
     friendship WHERE cod_answer='$cod_user' and status='1') order by data_post desc";
 
     $retorno = $conexao->query($sql);
@@ -16,11 +16,12 @@
         $img = $resultado['img'];
         $data = $resultado['data_post'];
 
-        $sqlNome = "SELECT `name` FROM user WHERE id_user='$postou'";
+        $sqlNome = "SELECT name,photo FROM user WHERE id_user='$postou'";
         $queryNome = $conexao->query($sqlNome);
 
         $resultNome = $queryNome->fetch_array();
         $nome = $resultNome['name'];
+        $foto = $resultNome['photo'];
 
         if($img != null){
             $html = "<div class=\"w3-row-padding\" style=\"margin:0 -16px\">

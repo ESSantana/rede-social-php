@@ -10,7 +10,7 @@
 
   if($registro = $retorno->fetch_array()){
     $nome = $registro['name'];
-    $id_friend = $registro['id_friend'];
+    $_SESSION['id_friend'] = $registro['id_friend'];
 
       echo "  <div class=\"w3-col m2\">
                 <div class=\"w3-card w3-round w3-white w3-center\">
@@ -20,36 +20,18 @@
                     <span>$nome</span>
                     <div class=\"w3-row w3-opacity\">
                       <div class=\"w3-half\">
-                        <a href=\"painel.php?selec=1\" class=\"w3-button w3-block w3-green w3-section wid\" title=\"Aceitar\"><i class=\"fa fa-check\"></i></a>
+                        <a href=\"acoes/solicitacao_control.php?selec=1\" class=\"w3-button w3-block w3-green w3-section wid\" title=\"Aceitar\"><i class=\"fa fa-check\"></i></a>
                       </div>
                       <div class=\"w3-half\">
-                        <a href=\"painel.php?selec=0\" class=\"w3-button w3-block w3-red w3-section wid\" title=\"Negar\"><i class=\"fa fa-remove\"></i></a>
+                        <a href=\"acoes/solicitacao_control.php?selec=0\" class=\"w3-button w3-block w3-red w3-section wid\" title=\"Negar\"><i class=\"fa fa-remove\"></i></a>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
                 <br>";
-    
-    $selec = $_GET['selec'];
-      if($selec == 1){
-        $confirma = "UPDATE friendship SET status='1' WHERE id_friend = '$id_friend'";
-        $confirm1 = $conexao->query($confirma); 
-    
-        if($confirm){
-          header("Location: ./painel.php");
-        }
-        unset($selec,$confirma,$confirm1);
-      } else if ($selec == 0){
-        $nega = "UPDATE friendship SET status='0' WHERE id_friend = '$id_friend'";
-        $confirm2 = $conexao->query($nega); 
-    
-        if($nega){
-          header("Location: ./painel.php");
-        }
-        unset($selec,$nega,$confirm2);
-      }  
   }
+  
 
 ?>
 

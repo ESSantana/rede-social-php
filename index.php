@@ -94,10 +94,10 @@
 							<p class="text-uppercase"> Faça login usando seu usuário </p>	
  								
 							<div class="form-group">
-								<input type="text" name="user" id="user" class="form-control input-lg" placeholder="Usuário">
+								<input type="text" name="user" id="user" class="form-control input-lg" placeholder="Usuário" required>
 							</div>
 							<div class="form-group">
-								<input type="password" name="pass" id="pass" class="form-control input-lg" placeholder="Senha">
+								<input type="password" name="pass" id="pass" class="form-control input-lg" placeholder="Senha" required>
 							</div>
 							<div>
 								<input type="submit" class="btn btn-md" value="Entrar">

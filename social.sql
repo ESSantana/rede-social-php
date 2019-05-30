@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 30-Maio-2019 às 12:57
+-- Generation Time: 30-Maio-2019 às 18:22
 -- Versão do servidor: 10.1.38-MariaDB
 -- versão do PHP: 7.3.2
 
@@ -49,6 +49,15 @@ CREATE TABLE `friendship` (
   `status` enum('0','1','2') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `friendship`
+--
+
+INSERT INTO `friendship` (`id_friend`, `cod_ask`, `cod_answer`, `status`) VALUES
+(1, 2, 1, '1'),
+(2, 3, 1, '1'),
+(3, 4, 1, '1');
+
 -- --------------------------------------------------------
 
 --
@@ -75,6 +84,17 @@ CREATE TABLE `publish` (
   `data_post` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `publish`
+--
+
+INSERT INTO `publish` (`id_post`, `cod_user`, `post`, `img`, `data_post`) VALUES
+(1, 1, 'Um palco', 'https://www.claroecriativo.com.br/wp-content/uploads/2018/05/Stand-Up.jpg', '2019-05-30 08:01:09'),
+(2, 2, 'Testes', '', '2019-05-30 08:46:41'),
+(3, 2, 'Testes', '', '2019-05-30 08:46:47'),
+(4, 3, 'Se aparecer lÃ¡ Ã© show!\r\n', '', '2019-05-30 01:13:29'),
+(5, 4, 'Se aparecer lÃ¡ tbm Ã© show!', '', '2019-05-30 01:13:59');
+
 -- --------------------------------------------------------
 
 --
@@ -93,6 +113,17 @@ CREATE TABLE `user` (
   `local_nasc` varchar(255) NOT NULL,
   `especi_hum` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `user`
+--
+
+INSERT INTO `user` (`id_user`, `name`, `login`, `pass`, `photo`, `dia_nasc`, `mes_nasc`, `ano_nasc`, `local_nasc`, `especi_hum`) VALUES
+(1, 'Emerson', 'emerson123', '202cb962ac59075b964b07152d234b70', 'img/emerson.jpeg', '1', 'Janeiro', '2019', '', 'Piadilhas'),
+(2, 'Luis', 'lui123', '202cb962ac59075b964b07152d234b70', 'img/luis.jpeg', '1', 'Janeiro', '2019', '', 'Trocadalhos'),
+(3, 'Administrador', 'admin', '202cb962ac59075b964b07152d234b70', 'img/profile.png', '1', 'Janeiro', '2019', '', 'Administrar'),
+(4, 'Carlos', 'car123', '202cb962ac59075b964b07152d234b70', 'img/profile.png', '12', 'Fevereiro', '1990', 'Salvador,BA', 'Sei lá man kkkk'),
+(5, 'Luana', 'lua123', '202cb962ac59075b964b07152d234b70', 'img/profile.png', '1', 'Abril', '1990', 'Salvador,BA', 'Sei lá man kkkk');
 
 --
 -- Indexes for dumped tables
@@ -143,7 +174,7 @@ ALTER TABLE `comment`
 -- AUTO_INCREMENT for table `friendship`
 --
 ALTER TABLE `friendship`
-  MODIFY `id_friend` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_friend` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `lik`
@@ -155,13 +186,13 @@ ALTER TABLE `lik`
 -- AUTO_INCREMENT for table `publish`
 --
 ALTER TABLE `publish`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -26,7 +26,8 @@
                     document.location.href = './../index.php';
                 </script>";
         } else {
-            $sql = "INSERT INTO user (`name`,`login`,`pass`,`dia_nasc`,`mes_nasc`,`ano_nasc`,`especi_hum`) VALUES ('$name','$user','$pass','$dia','$mes','$ano','$especialidade')";
+            $sql = "INSERT INTO user (`name`,`login`,`pass`,`photo`,`dia_nasc`,`mes_nasc`,`ano_nasc`,`especi_hum`) 
+            VALUES ('$name','$user','$pass','img/profile.png','$dia','$mes','$ano','$especialidade')";
     
             $resultado = $conexao->query($sql);
     
