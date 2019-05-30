@@ -14,7 +14,7 @@ html, body, h1, h2, h3, h4, h5 {
   font-size: 17px;
   border: none;
   border-radius: 5px 0 0 5px;
-  width: 350px;
+  width: 300px;
 }
 
 .topnav .search-container button {
@@ -32,6 +32,35 @@ html, body, h1, h2, h3, h4, h5 {
   background: #ddd;
 }
 
+.w3-fixed{
+  position: fixed;
+  top: 51px;
+  width: 100%;
+}
+
+.w3-fixed input[type=text]{
+  float:left;
+  margin-left: 20px;
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  width: 50%;
+}
+
+.w3-fixed button{
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: white;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  width: 38px;
+}
+
  /* publicar.php */
 .publishcontainer textarea {
   width: 100% !important;
@@ -47,3 +76,12 @@ html, body, h1, h2, h3, h4, h5 {
   margin-bottom: 5px;
   border-radius: 0 0 5px 5px;
 }
+
+ .w3-button{
+  border-radius: 5px;
+}
+
+.wid {
+  width: 80%;
+  margin: auto; 
+} 
