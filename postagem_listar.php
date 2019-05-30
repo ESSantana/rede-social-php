@@ -2,6 +2,7 @@
     session_start();
     include_once 'conexao.php';
     $cod_user = $_SESSION['id_user'];
+    $foto = $_SESSION['foto'];
 
     $sql = "SELECT * FROM publish WHERE cod_user='$cod_user' UNION SELECT * FROM publish WHERE cod_user=(SELECT cod_answer FROM 
     friendship WHERE cod_ask='$cod_user' and status='1') UNION SELECT * FROM publish WHERE cod_user=(SELECT cod_ask FROM 
@@ -24,14 +25,14 @@
         if($img != null){
             $html = "<div class=\"w3-row-padding\" style=\"margin:0 -16px\">
                 <div class=\"w3-full\">
-                    <img src=\"$img\" style=\"width:50%\" alt=\"postagem\" class=\"w3-margin-bottom\">
+                    <img src=\"$img\" style=\"width:50%; \" alt=\"postagem\" class=\"w3-margin-bottom\">
                 </div>
             </div>";
         } 
 
         echo "
         <div class=\"w3-container w3-card w3-white w3-round w3-margin\"><br>
-            <img src=\"img/profile.png\" alt=\"Avatar\" class=\"w3-left w3-circle w3-margin-right\" style=\"width:60px\">
+            <img src=\"$foto\" alt=\"Avatar\" class=\"w3-left w3-circle w3-margin-right\" style=\"width:60px\">
             <span class=\"w3-right w3-opacity\">$data</span>
             <h4>$nome</h4><br>
             <hr class=\"w3-clear\">

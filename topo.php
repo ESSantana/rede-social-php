@@ -28,7 +28,7 @@
                 <!-- Search form -->
                 <div class="search-container w3-hide-small">
                     <form method="GET">
-                        <input type="text" placeholder="Search" name="search">
+                        <input type="text" placeholder="Procurar amigo..." name="search">
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
@@ -38,7 +38,7 @@
         <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large w3-fixed">
             <!-- <a href="#" class="w3-bar-item w3-button w3-padding-large">Easter Egg</a> -->
             <form method="GET">
-                <input type="text" placeholder="Search" name="search">
+                <input type="text" placeholder="Procurar amigo..." name="search">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
             <a href="#" class="w3-bar-item w3-button w3-padding-large">Meu Perfil</a>

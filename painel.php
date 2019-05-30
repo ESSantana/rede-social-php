@@ -27,7 +27,7 @@
     <!-- End Middle Column -->
     </div>
       <?php 
-        include_once 'eventos.php';
+
         include_once 'solicitacao.php'; 
       ?>
     <!-- End Right Column -->
