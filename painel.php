@@ -1,5 +1,6 @@
 <?php 
   include_once './acoes/verifica_sessao.php';
+  // include_once './acoes/notificar.php';
   include_once 'topo.php'; 
 ?>
 <!-- Page Container -->
@@ -27,7 +28,6 @@
     <!-- End Middle Column -->
     </div>
       <?php 
-
         include_once 'solicitacao.php'; 
       ?>
     <!-- End Right Column -->

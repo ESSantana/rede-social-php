@@ -2,7 +2,7 @@
     session_start();
     include_once './../conexao.php';
 
-    $_SESSION['noti'] = true;
+    $_SESSION['noti'] = false;
 
     // $sql = "SELECT * FROM publish  WHERE cod_user='$cod_user' UNION SELECT * FROM publish WHERE cod_user IN (SELECT cod_answer FROM 
     // friendship WHERE cod_ask='$cod_user' and status='1') UNION SELECT * FROM publish WHERE cod_user IN (SELECT cod_ask FROM 
@@ -11,5 +11,8 @@
     // $retorno = $conexao->query($sql);
 
     // while($resultado = $retorno->fetch_array()){
+
+
+    }
 
 ?>

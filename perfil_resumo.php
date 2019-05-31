@@ -1,3 +1,5 @@
+<!-- USA AS SESSÕES INICIADAS NO LOGIN.PHP PRA CONFIGURAR PARA CADA USUARIO -->
+
 <div class="w3-card w3-round w3-white">
     <div class="w3-container">
          <h4 class="w3-center"><?php echo $_SESSION['nome']; ?></h4>
