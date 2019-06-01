@@ -87,7 +87,10 @@ html, body, h1, h2, h3, h4, h5 {
 } 
 
 .rodape{
+  bottom: 0px;
   position: fixed;
-  bottom: 0;
   width: 100%;
+  background-color: grey;
+  padding: 0px;
+  text-align: center
 }

@@ -1,18 +1,28 @@
 <?php
     session_start();
-    include_once './../conexao.php';
+    error_reporting(1);
+    $conexao = include('../conexao.php');
+
+    //CRIA VARIAVEL COM O CÓDIGO DO USUÁRIO DA SESSÃO PARA PERSONALIZAR AS INFORMAÇÕES DO FEED
+    $sess = $_SESSION['id_user'];
 
     $_SESSION['noti'] = false;
+    $contador = 0;
 
-    // $sql = "SELECT * FROM publish  WHERE cod_user='$cod_user' UNION SELECT * FROM publish WHERE cod_user IN (SELECT cod_answer FROM 
-    // friendship WHERE cod_ask='$cod_user' and status='1') UNION SELECT * FROM publish WHERE cod_user IN (SELECT cod_ask FROM 
-    // friendship WHERE cod_answer='$cod_user' and status='1') order by data_post desc";
-
-    // $retorno = $conexao->query($sql);
+    $sql = "SELECT * FROM user JOIN friendship
+    on user.id_user = friendship.cod_ask WHERE friendship.status='2' and friendship.cod_answer=$sess";
+    
+    $retorno = $conexao->query($sql);
+   
 
     // while($resultado = $retorno->fetch_array()){
-
-
-    }
+    //     $contador +=1;
+    //     if($contador=>2){
+    //         $_SESSION['noti'] = true;
+    //         break;
+    //     } else {
+    //         $_SESSION['noti'] = false;
+    //     }
+    // }
 
 ?>
