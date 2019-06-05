@@ -1,8 +1,6 @@
 <?php
     include_once './acoes/verifica_sessao.php';
     include_once 'topo.php'; 
-    
-
 ?>
 
 <!-- Container -->
@@ -11,13 +9,12 @@
     <div class="w3-row">
         <!-- Coluna da Foto -->
         <div class="w3-col m3">
-            <!-- Alterar foto -->
+            <!-- foto -->
             <div class="w3-row">
                 <div class="w3-card w3-round w3-white">
                     <div class="w3-container w3-margin-bottom">
                         <p><h4 class="w3-center">Perfil</h4></p>
                         <p class="w3-center"><img src="<?php echo $_SESSION['foto'];?>" class="w3-circle" style="height:100%; width:100%; max-height: 204px; max-width: 204px" alt="Avatar"></p>
-                        <form>
                     </div>
                 </div>
             </div>
@@ -87,10 +84,8 @@
                                     ?>
                                 </select>
                             </div>
-                        
                         </div>
-                        <button class="btn btn-sm w3-theme w3-margin-top w3-margin-bottom" style="font-size:20px" >Salvar Alterações</button>
-                        <br>
+                        <button type="submit" class="btn btn-sm w3-theme w3-margin-top w3-margin-bottom mb-5" style="font-size:20px">Salvar Alterações</button>
                     </form>
                 </div>
             </div>

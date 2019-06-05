@@ -1,8 +1,9 @@
 <?php
+    session_start();
     include_once './../conexao.php';
 
     // Obtém o ID via GET
-    $id = $_SESSION["id_user"];
+    $id = $_SESSION['id_user'];
 
     $nome = $_POST['nome'];
     $foto = $_POST['foto'];
@@ -23,12 +24,12 @@
         $retorno = $conexao->query($sql);
         if($retorno){
             echo "<script>
-                    document.location.href ='./../painel.php';
+                    document.location.href ='refresh.php';
                     alert('Dados atualizados com sucesso!');
                 </script>";
         } else {
             echo "<script>
-                    document.location.href ='./../painel.php';
+                    document.location.href ='refresh.php';
                     alert('Erro ao atualizar os dados!');
                 </script>";
         }
