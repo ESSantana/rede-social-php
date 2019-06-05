@@ -3,13 +3,15 @@
     error_reporting(1);
     include_once 'conexao.php';
     $nome = $_POST['amigo'];
+    $id_sessao = $_SESSION['id_user'];
 
     $sql = "SELECT * FROM user WHERE name LIKE '$nome%'";
 
     $retorno = $conexao->query($sql);
 
     while($resultado = $retorno->fetch_array()){
-        if($resultado['id_user'] != $_SESSION['id_user']){
+        if($resultado['id_user'] != $id_sessao){
+
 
             $id = $resultado['id_user'];
             $nome = $resultado['name'];
@@ -19,7 +21,22 @@
             $dia = $resultado['dia_nasc'];
             $mes = $resultado['mes_nasc'];
             $ano = $resultado['ano_nasc'];
-    
+
+            $amg = "SELECT * FROM friendship WHERE (cod_ask='$id_sessao' or cod_answer='$id_sessao')
+            and (cod_ask='$id' or cod_answer='$id') and status='1'";
+
+            $verifica = $conexao->query($amg);
+
+            if($verifica->fetch_array()){              
+                $btn =  "<div>
+                            <a href='acoes/desfazer_amizade.php?id=$id' class='w3-button w3-theme w3-section w3-margin-left w3-hover-red' title='Desfazer Amizade'><i class='fa fa-send'></i> Desfazer Amizade</a>
+                        </div>";
+            } else {
+                $btn =  "<div>
+                            <a href='acoes/solicitar_amizade.php?id=$id' class='w3-button w3-theme w3-section w3-margin-left w3-hover-red' title='Pedido de Amizade'><i class='fa fa-send'></i> Enviar Solicitação</a>
+                        </div>";
+            }
+
             echo "
             <div class='w3-row-padding mb-3'>
                 <div class='w3-col m12'>
@@ -37,9 +54,7 @@
                                     <i class='fa fa-home fa-fw w3-margin-left w3-text-theme'></i>$local
                                     <i class='fa fa-birthday-cake fa-fw w3-margin-left w3-text-theme'></i>$dia de $mes de $ano
                                 </div>
-                                <div>
-                                    <a href='acoes/solicitar_amizade.php?id=$id' class='w3-button w3-theme w3-section w3-margin-left w3-hover-red' title='Pedido de Amizade'><i class='fa fa-send'></i> Enviar Solicitação</a>
-                                </div>
+                                $btn
                     </div>
                     </div>
                 </div>

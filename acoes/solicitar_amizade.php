@@ -17,8 +17,6 @@
         
         $teste = $conexao->query($verificacao);
         
-        // var_dump($teste);
-        // var_dump($teste2);
         if($teste->fetch_array()){
             echo "<script> 
                 alert('Vocês já são amigos!');

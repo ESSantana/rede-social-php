@@ -30,7 +30,7 @@
         //SE FOR 2, EXECUTA A THREAD DE NEGAR A AMIZADE E MUDA O VALOR NO BANCO DE DADOS
         } else if($selec == 0){
             //CRIA SQL E EXECUTA NA CONEXÃO PARA ALTERAR A AMIZADE PARA 'AMIZADE NEGADA'
-            $nega = "UPDATE friendship SET status='0' WHERE id_friend = '$id_friend'";
+            $nega = "DELETE FROM friendship WHERE id_friend = '$id_friend'";
             $confirm2 = $conexao->query($nega); 
             if($nega){
                 //REDIRECIONA PRO PAINEL
