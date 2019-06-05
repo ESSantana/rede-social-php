@@ -1,20 +1,15 @@
 <?php
-    // INICIA O USO DE SESSÕES NA PÁGINA
     session_start();
     include_once 'conexao.php';
 
-    //CRIA VARIAVEL COM O CÓDIGO DO USUÁRIO DA SESSÃO PARA PERSONALIZAR AS INFORMAÇÕES DO FEED
-    $cod_user = $_SESSION['id_user'];
-    
-    //CRIA O COMANDO SQL PRA PEGAR O QUE SERÁ POSTADO NA TIME LINE EM ORDEM CRONOLÓGICA
-    $sql = "SELECT * FROM publish  WHERE cod_user='$cod_user' UNION SELECT * FROM publish WHERE cod_user IN (SELECT cod_answer FROM 
-    friendship WHERE cod_ask='$cod_user' and status='1') UNION SELECT * FROM publish WHERE cod_user IN (SELECT cod_ask FROM 
-    friendship WHERE cod_answer='$cod_user' and status='1') order by data_post desc";
+    if($_GET['id'] != null && $_GET['id'] != ""){
 
-    //EXECUTA O COMANDO SQL NA CONEXÃO INICIADA
+    $id = $_GET['id'];
+
+    $sql = "SELECT * FROM publish WHERE cod_user='$id'";
+
     $retorno = $conexao->query($sql);
 
-    //EXECUTA UM LOOP ATÉ QUE TODAS AS POSTAGENS SEJAM MOSTRADAS
     while($resultado = $retorno->fetch_array()){
 
         //RECEBE OS VALORES QUE SERAM EXIBIDOS NA POSTAGEM
@@ -49,7 +44,7 @@
         <div class=\"w3-container w3-card w3-white w3-round w3-margin\"><br>
             <img src=\"$foto\" alt=\"Avatar\" class=\"w3-left w3-circle w3-margin-right\" style=\"width:60px\">
             <span class=\"w3-right w3-opacity\">$data</span>
-            <h4><a href='painel_exclu.php?id=$postou' style='text-decoration:none'>$nome</a></h4><br>
+            <h4><a href='painel.php?id=$postou' style='text-decoration:none'>$nome</a></h4><br>
             <hr class=\"w3-clear\">
             <p>$post</p>
             $html
@@ -59,8 +54,7 @@
 
         //LIMPANDO A VARIAVEL QUE GERA A IMAGEM
         unset($html);
+        }
     }
-
-    
 
 ?>

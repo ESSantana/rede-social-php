@@ -9,7 +9,7 @@
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
 
@@ -45,7 +45,6 @@
                                             for($x=1;$x<=31;$x++){
                                                 echo "<option value='$x'>$x</option>";
                                             }
-                                        
                                         ?>
                                     </select>       
                                 </div>  
@@ -78,7 +77,7 @@
                             </div>
 
  							<div>
- 									  <input type="submit" class="btn btn-md btn-primary" value="Registrar">
+ 									  <input type="submit" class="btn btn-md btn-danger" value="Registrar">
  							</div>
 						</fieldset>
 					</form>

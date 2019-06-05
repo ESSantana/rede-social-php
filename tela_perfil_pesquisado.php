@@ -19,8 +19,8 @@
     <!-- Middle Column -->
     <div class="w3-col m7">
       <?php 
-        include_once 'publicar.php';
-        include_once 'postagem_listar.php'; 
+        include_once 'pesquisa_usuario.php';
+        //INCLUIR AQUI OS POSTS APENAS DO USUARIO PESQUISADO
       ?>
       
     <!-- End Middle Column -->

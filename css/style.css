@@ -2,6 +2,9 @@ html, body, h1, h2, h3, h4, h5 {
     font-family: "Open Sans", sans-serif;
 
 }
+body{
+  background: #FFF5F5;
+}
 /* topo.php */
 .topnav .search-container {
   float: right;
@@ -29,7 +32,7 @@ html, body, h1, h2, h3, h4, h5 {
 }
 
 .topnav .search-container button:hover {
-  background: #ddd;
+  background: #FFDDD3;
 }
 
 .w3-fixed{
@@ -84,13 +87,22 @@ html, body, h1, h2, h3, h4, h5 {
 .wid {
   width: 80%;
   margin: auto; 
-} 
+}
+ /* tela_comentario.php */
+.coment-container textarea {
+  width: 100% !important;
+  resize: none;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
 
+/* rodape.php */
 .rodape{
   bottom: 0px;
   position: fixed;
   width: 100%;
-  background-color: grey;
   padding: 0px;
   text-align: center
 }
