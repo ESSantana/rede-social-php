@@ -1,4 +1,5 @@
 <?php 
+    include_once 'verifica_sessao.php';
     session_start();
     include_once '../conexao.php';
     $id = $_SESSION['id_user'];

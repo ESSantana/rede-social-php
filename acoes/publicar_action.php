@@ -1,4 +1,5 @@
 <?php
+    include_once 'verifica_sessao.php';
     // INICIA O USO DE SESSÕES NA PÁGINA
     session_start();
     include_once './../conexao.php';

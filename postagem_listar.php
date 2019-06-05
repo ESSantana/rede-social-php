@@ -46,7 +46,7 @@
         } 
 
         if ($postou == $cod_user){
-            $excluir = "<a href='acoes/excluir_post.php?id_post=$id_post' class='w3-rigth'>x</a>";
+            $excluir = "<a href='acoes/excluir_post.php?id_post=$id_post' class='w3-rigth btn btn-danger btn-sm w3-right w3-margin-left'>x</a>";
         }
 
         //CRIAÇÃO DE CADA POSTAGEM
@@ -59,8 +59,16 @@
             <hr class=\"w3-clear\">
             <p>$post</p>
             $html
-            <button type=\"button\" class=\"w3-button w3-theme-d1 w3-margin-bottom\"><i class=\"fa fa-thumbs-up\"></i>  Lik</button> 
-            <button type=\"button\" class=\"w3-button w3-theme-d2 w3-margin-bottom\"><i class=\"fa fa-comment\"></i>  Comment</button> 
+            <div class='form-row'>
+                <form method='POST' action='acoes/curtir.php' class='mr-2'>
+                    <button type=\"submit\" class=\"w3-button w3-theme-d1 w3-margin-bottom w3-hover-red\"><i class=\"fa fa-thumbs-up\"></i>  Like</button> 
+                    <input class='sr-only' style='width: 0px; height:0px; border-color:white;' value='$id_post' name='id'>
+                </form>
+                <form method='POST' action='tela_comentario.php'>
+                    <button type=\"submit\" class=\"w3-button w3-theme-d1 w3-margin-bottom w3-hover-red\"><i class=\"fa fa-comment\"></i>  Comment</button> 
+                    <input class='sr-only' style='width: 0px; height:0px; border-color:white;' value='$id_post' name='id'>
+                </form>
+            </div>
         </div>";
 
         //LIMPANDO A VARIAVEL QUE GERA A IMAGEM E BOTÃO DE EXCLUIR

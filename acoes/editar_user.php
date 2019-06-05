@@ -1,5 +1,6 @@
 <?php
-    session_start();
+include_once 'verifica_sessao.php';
+session_start();
     include_once './../conexao.php';
 
     // Obtém o ID via GET

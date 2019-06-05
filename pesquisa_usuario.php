@@ -1,4 +1,5 @@
 <?php
+    include_once './acoes/verifica_sessao.php';
     session_start();
     error_reporting(1);
     include_once 'conexao.php';

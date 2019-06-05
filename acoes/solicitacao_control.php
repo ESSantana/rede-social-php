@@ -1,4 +1,5 @@
 <?php
+    include_once 'verifica_sessao.php';
     // INICIA O USO DE SESSÕES DO NO ARQUIVO
     session_start();
     include_once './../conexao.php';
