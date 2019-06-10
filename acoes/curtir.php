@@ -3,20 +3,19 @@
     session_start();
     include_once './../conexao.php';
 
-    $id = addslashes($_GET['id']);
+    $id = $_POST['id'];
     $userAtual = $_SESSION['id_user'];
     
-    $sqlVeri = "SELECT * FROM lik WHERE cod_user={$userAtual} and cod_post={$id}";  
+    $sqlVeri = "SELECT * FROM lik WHERE cod_user='{$userAtual}' and cod_post='{$id}'";  
     
-    $retorno = $conexao->query($sqlVeri);
-    
-    var_dump($id,$userAtual,$retorno);
+    $verifica = $conexao->query($sqlVeri);
 
-    if($retorno->fetch_array()){
-        unset($retorno);
-        $sqlAtualiza = "DELETE FROM lik WHERE cod_user={$userAtual} and cod_post={$id}";
-        $retorno = $conexao->query($sqlAtualiza);
-        if($retorno->fetch_array()){
+    if($verifica->fetch_array()){
+
+        $sqlAtualiza = "DELETE FROM lik WHERE cod_user='{$userAtual}' and cod_post='{$id}'";
+        $deleta = $conexao->query($sqlAtualiza);
+        
+        if($deleta){
             echo " <script>
                         document.location.href ='./../painel.php';
                     </script>";
@@ -26,13 +25,13 @@
                         
                     </script>";
         }
+
     } else {
-        unset($retorno);
-        $sqlInsere = "INSERT INTO lik (`cod_user`,`cod_post`) VALUES ({$userAtual},{$id})";
 
-        $retorno = $conexao->query($sqlInsere);
+        $sqlInsere = "INSERT INTO lik (`cod_user`,`cod_post`) VALUES ('{$userAtual}','{$id}')";
+        $insere = $conexao->query($sqlInsere);
 
-        if($retorno->fetch_array()){
+        if($insere){
             echo " <script>
                         document.location.href ='./../painel.php';
                     </script>";
@@ -42,5 +41,6 @@
                         
                     </script>";
         }
+
     }
 ?>

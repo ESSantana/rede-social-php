@@ -35,6 +35,15 @@
         $nome = $resultNome['name'];
         $foto = $resultNome['photo'];
 
+        $qtdLike = "SELECT * FROM lik WHERE cod_post='{$id_post}'";
+
+        $likeResult = $conexao->query($qtdLike);
+
+        $num = 0;
+        while($qtd = $likeResult->fetch_array()){
+            $num +=1;
+        }
+
         //CRIA VARIAVEL PARA MOSTRAR IMAGEM CASO TENHA NO REGISTRO
         //CASO CONTRÁRIO É IGNORADO ESSA PARTE
         if($img != null){
@@ -60,11 +69,11 @@
             <p>$post</p>
             $html
             <div class='form-row'>
-                <form method='GET' action='acoes/curtir.php' class='mr-2'>
-                    <button type=\"submit\" class=\"w3-button w3-theme-d1 w3-margin-bottom w3-hover-red\"><i class=\"fa fa-thumbs-up\"></i>  Like</button> 
+                <form method='POST' action='acoes/curtir.php' class='mr-2'>
+                    <button type=\"submit\" class=\"w3-button w3-theme-d1 w3-margin-bottom w3-hover-red\"><i class=\"fa fa-thumbs-up\"></i>  $num  Like</button> 
                     <input class='sr-only' style='width: 0px; height:0px; border-color:white;' value='$id_post' name='id'>
                 </form>
-                <form method='GET' action='tela_comentario.php'>
+                <form method='POST' action='tela_comentario.php'>
                     <button type=\"submit\" class=\"w3-button w3-theme-d1 w3-margin-bottom w3-hover-red\"><i class=\"fa fa-comment\"></i>  Comment</button> 
                     <input class='sr-only' style='width: 0px; height:0px; border-color:white;' value='$id_post' name='id'>
                 </form>

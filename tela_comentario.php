@@ -1,5 +1,5 @@
 <?php
-    include_once './acoes/verifica_sessao.php';
+    include_once 'acoes/verifica_sessao.php';
     include_once 'topo.php'; 
     $_
 ?>
@@ -10,13 +10,12 @@
     <!-- Left Column -->
     <div class="w3-col m3">
       <!-- Profile -->
-    <?php
-      
-      include_once 'perfil_resumo.php';
-      include_once 'menu_lateral.php' ;
+<?php
+    
+    include_once 'perfil_resumo.php';
 
-      $id = $_POST['id'];
-    ?>
+    $id = $_POST['id'];
+?>
     <!-- End Left Column -->
     </div>
     <div class="w3-col m7">
@@ -28,7 +27,7 @@
                         <!-- PRECISA DE UMA AÇÃO PRA PUBLICAR O COMENTÁRIO -->
                         <form method="POST" action="acoes/comentar.php">
                             <!-- AREA DO COMENTARIO -->
-                            <input class='sr-only' style='width: 0px; height:0px; border-color:white;' value='<?php $id; ?>' name='id'>
+                            <input class='sr-only' style='width: 0px; height:0px; border-color:white;' value='<?php echo $id; ?>' name='id'>
                             <textarea class="w3-border w3-padding" type="text" placeholder="Comente neste post" name="coment" rows="2" required></textarea>
                             <button type="submit" class="w3-button w3-theme w3-hover-red"><i class="fa fa-pencil"></i> Publicar</button> 
                         </form>
@@ -36,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <?php include_once 'comentario_listar.php' ?>
+        <?php include_once 'acoes/comentario_listar.php'; ?>
     </div>
 </div>
 

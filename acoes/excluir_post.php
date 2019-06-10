@@ -12,11 +12,15 @@ session_start();
                     </script>";
     } else {
 
-        $sql= "DELETE FROM publish WHERE id_post='$id_post'";
+        $sql = "DELETE FROM publish WHERE id_post='{$id_post}'";
+        $apagaLike = "DELETE FROM lik WHERE cod_post='{$id_post}'";
+        $apagaComent = "DELETE FROM comment WHERE cod_post='{$id_post}'";
 
-        $retorno = $conexao->query($sql);
-
-        if($retorno){
+        $delPost = $conexao->query($sql);
+        $delLike = $conexao->query($apagaLike);
+        $delCmt =  $conexao->query($apagaComent);
+        
+        if($delPost && $delLike && $delCmt){
             echo    "<script>
                         alert('Post apagado com sucesso!');
                         document.location.href='./../painel.php';

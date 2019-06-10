@@ -3,6 +3,9 @@
     
     session_start();
     include_once './../conexao.php';
+    
+    //MUDA O FUSO HORARIO DEFAULT
+    date_default_timezone_set("America/Bahia");
 
     $id_ses = $_SESSION['id_user'];
     $id = $_POST['id'];
@@ -14,22 +17,17 @@
 
     $retorno = $conexao->query($sql);
 
-    if($retorno){
-        if($retorno->fetch_array()){
+        if($retorno){
             echo "<script>
                     alert('Comentário publicado');
-                    document.location.href='tela_comentario.php';
+                    document.location.href='./../painel.php';
             </script>";
         } else {
             echo "<script>
-                    alert('Erroooooooooou');
-                    document.location.href='tela_comentario.php';
+                    alert('$retorno->error');
+                    document.location.href='./../painel.php';
             </script>";
         }
-        
-    } else {
-        echo $retorno->error;
-    }
 
 
 ?>
