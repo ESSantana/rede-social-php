@@ -26,13 +26,21 @@
             $amg = "SELECT * FROM friendship WHERE (cod_ask='$id_sessao' or cod_answer='$id_sessao')
             and (cod_ask='$id' or cod_answer='$id') and status='1'";
 
-            $verifica = $conexao->query($amg);
+            $verificacao = "SELECT * FROM friendship WHERE (cod_ask ='$id_sessao' or cod_answer='$id_sessao') 
+            and (cod_answer='$id' or cod_ask='$id') and status='2'";
 
-            if($verifica->fetch_array()){              
+            $verifica = $conexao->query($amg);
+            $verifica2 = $conexao->query($verificacao);
+
+            if($verifica->fetch_array() && $verifica2->fetch_array()==0){              
                 $btn =  "<div>
                             <a href='acoes/desfazer_amizade.php?id=$id' class='w3-button w3-theme w3-section w3-margin-left w3-hover-red' title='Desfazer Amizade'><i class='fa fa-send'></i> Desfazer Amizade</a>
                         </div>";
-            } else {
+            } else if($verifica2->fetch_array()){
+                $btn =  "<div>
+                            <a href='acoes/solicitar_amizade.php?id=$id' class='w3-button w3-theme w3-section w3-margin-left w3-hover-red' title='Pedido de Amizade'><i class='fa fa-send'></i> Cancelar Solicitação</a>
+                        </div>";
+            }else {
                 $btn =  "<div>
                             <a href='acoes/solicitar_amizade.php?id=$id' class='w3-button w3-theme w3-section w3-margin-left w3-hover-red' title='Pedido de Amizade'><i class='fa fa-send'></i> Enviar Solicitação</a>
                         </div>";
