@@ -3,15 +3,18 @@
     session_start();
     include_once './../conexao.php';
 
-    $id = $_POST['id'];
+    $id = addslashes($_GET['id']);
     $userAtual = $_SESSION['id_user'];
-
-    $sqlVeri = "SELECT * FROM lik WHERE cod_user='$userAtual' and cod_post='$id'";
-
+    
+    $sqlVeri = "SELECT * FROM lik WHERE cod_user={$userAtual} and cod_post={$id}";  
+    
     $retorno = $conexao->query($sqlVeri);
+    
+    var_dump($id,$userAtual,$retorno);
 
     if($retorno->fetch_array()){
-        $sqlAtualiza = "DELETE FROM like WHERE cod_user='$userAtual' and cod_post='$id'";
+        unset($retorno);
+        $sqlAtualiza = "DELETE FROM lik WHERE cod_user={$userAtual} and cod_post={$id}";
         $retorno = $conexao->query($sqlAtualiza);
         if($retorno->fetch_array()){
             echo " <script>
@@ -24,7 +27,8 @@
                     </script>";
         }
     } else {
-        $sqlInsere = "INSERT INTO lik (cod_user,cod_post) VALUES ('$userAtual','$id')";
+        unset($retorno);
+        $sqlInsere = "INSERT INTO lik (`cod_user`,`cod_post`) VALUES ({$userAtual},{$id})";
 
         $retorno = $conexao->query($sqlInsere);
 

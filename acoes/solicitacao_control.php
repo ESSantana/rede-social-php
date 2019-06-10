@@ -22,7 +22,7 @@
                 //INFORMA QUE A AMIZADE FOI INICIADA E REDIRECIONA PRO PAINEL
                 echo "  <script>
                             document.location.href ='./../painel.php';
-                            alert('Agora vocês são amigos e podem as postagens um do outro!');
+                            alert('Solicitação de amizade aceita!');
                         </script>";
             }
             //LIMPA AS VARIAVEIS USADAS

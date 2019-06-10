@@ -19,7 +19,7 @@
     <!-- Middle Column -->
     <div class="w3-col m7">
       <?php 
-        include_once 'pesquisa_usuario.php';
+        include_once 'acoes/pesquisa_usuario.php';
         //INCLUIR AQUI OS POSTS APENAS DO USUARIO PESQUISADO
       ?>
       

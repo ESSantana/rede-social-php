@@ -26,7 +26,7 @@
                 <div class="w3-card w3-round w3-white">
                     <div class="w3-container w3-padding coment-container">
                         <!-- PRECISA DE UMA AÇÃO PRA PUBLICAR O COMENTÁRIO -->
-                        <form method="POST" action="comentar.php">
+                        <form method="POST" action="acoes/comentar.php">
                             <!-- AREA DO COMENTARIO -->
                             <input class='sr-only' style='width: 0px; height:0px; border-color:white;' value='<?php $id; ?>' name='id'>
                             <textarea class="w3-border w3-padding" type="text" placeholder="Comente neste post" name="coment" rows="2" required></textarea>

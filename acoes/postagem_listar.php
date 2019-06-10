@@ -60,11 +60,11 @@
             <p>$post</p>
             $html
             <div class='form-row'>
-                <form method='POST' action='acoes/curtir.php' class='mr-2'>
+                <form method='GET' action='acoes/curtir.php' class='mr-2'>
                     <button type=\"submit\" class=\"w3-button w3-theme-d1 w3-margin-bottom w3-hover-red\"><i class=\"fa fa-thumbs-up\"></i>  Like</button> 
                     <input class='sr-only' style='width: 0px; height:0px; border-color:white;' value='$id_post' name='id'>
                 </form>
-                <form method='POST' action='tela_comentario.php'>
+                <form method='GET' action='tela_comentario.php'>
                     <button type=\"submit\" class=\"w3-button w3-theme-d1 w3-margin-bottom w3-hover-red\"><i class=\"fa fa-comment\"></i>  Comment</button> 
                     <input class='sr-only' style='width: 0px; height:0px; border-color:white;' value='$id_post' name='id'>
                 </form>

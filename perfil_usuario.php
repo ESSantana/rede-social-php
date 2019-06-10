@@ -30,22 +30,22 @@
                         <div class="form-group">
                             <i class="fa fa-address-card fa-fw w3-margin-top w3-margin-right w3-text-theme"></i>
                             <label>Nome</label>
-                            <input type="text" name="nome" id="name_profile" class="form-control" value="<?php echo $_SESSION['nome']; ?> "required>
+                            <input type="text" name="nome" id="name_profile" class="form-control" value="<?php echo $_SESSION['nome']; ?> "required maxlength="30">
                         </div>
                         <div class="form-group">
                             <i class="fa fa-address-card fa-fw w3-margin-top w3-margin-right w3-text-theme"></i>
                             <label>Foto</label>
-                            <input type="text" name="foto" id="foto_profile" class="form-control" value="<?php echo $_SESSION['foto']; ?> "required>
+                            <input type="text" name="foto" id="foto_profile" class="form-control" value="<?php echo $_SESSION['foto']; ?> ">
                         </div>
                         <div class="form-group">
                             <i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i>
                             <label>Especialidade</label>
-                            <input type="text" name="especialidade" id="especialidade_profile" class="form-control" value="<?php echo $_SESSION['especialidade'];?> " required>
+                            <input type="text" name="especialidade" id="especialidade_profile" class="form-control" value="<?php echo $_SESSION['especialidade'];?> " required maxlength="30">
                         </div>
                         <div class="form-group">
                             <i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>
                             <label>Endereço</label>
-                            <input type="text" name="local" id="endereco_profile" class="form-control" value="<?php echo $_SESSION['local_nasc'];?> " required>
+                            <input type="text" name="local" id="endereco_profile" class="form-control" value="<?php echo $_SESSION['local_nasc'];?> " required maxlength="40">
                         </div>
                         <label><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i>Data de nascimento</label>
                         <div class="row">

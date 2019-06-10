@@ -20,7 +20,7 @@
     <div class="w3-col m7">
       <?php 
         include_once 'publicar.php';
-        include_once 'postagem_listar_exclu.php'; 
+        include_once 'acoes/postagem_listar_exclu.php'; 
       ?>
       
     <!-- End Middle Column -->
