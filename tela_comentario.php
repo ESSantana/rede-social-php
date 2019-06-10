@@ -15,10 +15,13 @@
     include_once 'perfil_resumo.php';
 
     $id = $_POST['id'];
+    
+    
 ?>
     <!-- End Left Column -->
     </div>
     <div class="w3-col m7">
+    <?php include_once 'post_comentario.php'; ?>
         <!-- INSERIR AQUI O POST A SER COMENTADO -->
         <div class="w3-row-padding publisharea">
             <div class="w3-col m12">

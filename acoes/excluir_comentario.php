@@ -14,7 +14,6 @@
 
         if($deleta){
             echo "<script>
-                        alert('Work well!');
                         document.location.href='./../painel.php';
                 </script>";
         } else {

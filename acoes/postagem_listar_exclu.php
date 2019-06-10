@@ -1,8 +1,10 @@
 <?php
+    include_once 'verifica_sessao.php';
     session_start();
     include_once 'conexao.php';
     
     $id = $_GET['id'];
+    $userAtual = $_SESSION['id_user'];
 
     if($id != null && $id != ""){
 
@@ -49,7 +51,10 @@
                 </div>";
             } 
 
-            if ($postou == $id){
+            //LIMPANDO A VARIAVEL QUE GERA A IMAGEM
+            unset($excluir);
+
+            if ($postou == $userAtual){
                 $excluir = "<a href='acoes/excluir_post.php?id_post=$id_post' class='w3-rigth btn btn-danger btn-sm w3-right w3-margin-left'>x</a>";
             }
 
@@ -68,15 +73,14 @@
                         <button type=\"submit\" class=\"w3-button w3-theme-d1 w3-hover-red w3-margin-bottom\"><i class=\"fa fa-thumbs-up\"></i>  $num  Like</button> 
                         <input class='sr-only' style='width: 0px; height:0px; border-color:white;' value='$id_post' name='id'>
                     </form>
-                    <form method='POST' action='./../tela_comentario.php'>
+                    <form method='POST' action='tela_comentario.php'>
                         <button type=\"submit\" class=\"w3-button w3-theme-d1 w3-hover-red w3-margin-bottom\"><i class=\"fa fa-comment\"></i>  Comment</button> 
                         <input class='sr-only' style='width: 0px; height:0px; border-color:white;' value='$id_post' name='id'>
                     </form>
                 </div>
             </div>";
 
-            //LIMPANDO A VARIAVEL QUE GERA A IMAGEM
-            unset($html,$excluir);
+            
             }
     }
 
